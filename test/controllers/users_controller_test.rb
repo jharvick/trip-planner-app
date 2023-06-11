@@ -34,4 +34,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal user.email, data["email"]
     assert_equal user.password_digest, data["password_digest"]
   end
+
+  test "destroy" do
+    assert_difference "User.count", -1 do
+      delete "/users/#{User.first.id}.json"
+      assert_response 200
+    end
+  end
 end
