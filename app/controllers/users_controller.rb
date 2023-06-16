@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    p params
     @user = User.create(
       name: params[:name],
       email: params[:email],

@@ -11,7 +11,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "User.count", 1 do
-      post "/users.json", params: { name: "Chloe", email: "chloe@test.com", password_digest: "password" }
+      post "/users.json", params: { name: "test", email: "test@test.com", password_digest: "password" }
       assert_response 200
     end
   end
