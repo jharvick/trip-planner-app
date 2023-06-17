@@ -2,7 +2,7 @@ require "test_helper"
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "create" do
-    post "/users.json", params: { name: "Test", email: "test@test.com", password_digest: "password", password_confirmation: "password" }
+    post "/users.json", params: { name: "Test", email: "test@test.com", password_digest: "password" }
     post "/sessions.json", params: { email: "test@test.com", password: "password" }
     assert_response 201
 
